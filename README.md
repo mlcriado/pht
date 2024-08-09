@@ -16,7 +16,7 @@
    $ docker run -d -p 2222:22 --name armory_container your_image_name
 
    ### Connect to the Container via SSH
-   $ ssh -X root@localhost -p 2222
+   $ ssh -X -i pht root@localhost -p 2222
 
    ### Start Armory Inside the Container
    $ python /root/.armory/Armory3/ArmoryQt.py
