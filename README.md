@@ -3,24 +3,23 @@
    ## Instructions
 
    ### Clone the Repository
-   git clone https://github.com/mlcriado/pht.git
-   cd pht
+   $ git clone https://github.com/mlcriado/pht.git
+   $ cd pht
    
    ### Generate SSH Keys
-   ssh-keygen -t rsa -b 4096 -f pht
+   $ ssh-keygen -t rsa -b 4096 -f pht
    
    ### Build the Docker Image: You can name the Docker image as you prefer. Replace \`your_image_name\` with your desired name.
-   docker build -t your_image_name .
+   $ docker build -t your_image_name .
 
-   ### Run the Docker Container
-   Replace \`your_image_name\` with the name you used in the previous step.
-   docker run -d -p 2222:22 --name armory_container your_image_name
+   ### Run the Docker Container. Replace \`your_image_name\` with the name you used in the previous step.
+   $ docker run -d -p 2222:22 --name armory_container your_image_name
 
    ### Connect to the Container via SSH
-   ssh -X root@localhost -p 2222
+   $ ssh -X root@localhost -p 2222
 
    ### Start Armory Inside the Container
-   python /root/.armory/Armory3/ArmoryQt.py
+   $ python /root/.armory/Armory3/ArmoryQt.py
 
    ### X11 Server
 
