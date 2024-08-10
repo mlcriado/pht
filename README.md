@@ -13,7 +13,11 @@
    $ docker build -t your_image_name .
 
    ### Run the Docker Container. Replace \`your_image_name\` with the name you used in the previous step.
-   $ docker run -d -p 2222:22 --name armory_container your_image_name
+   $ docker run -d -p 2222:22-e PUID=1000 -e PGID=1000 --name armory_container your_image_name
+
+   ### If you already have the blockchain downloaded you can use the option -v \`path/to/your/blockchain/folder\`:/bitcoin 
+   ### If you already have the armory wallets and configuration created you can use the option -v \`path/to/your/armory/\`:/armory
+   $ docker run -d -p2222:22 -v /path/to/your/blockchain/folder:/bitcoin -v /path/to/your/armory:/armory -e PUID=1000 -e PGID=1000 --name armory_container your_image_name
 
    ### Connect to the Container via SSH
    $ ssh -X -i pht root@localhost -p 2222
