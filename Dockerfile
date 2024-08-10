@@ -50,6 +50,9 @@ RUN chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys
 
 # Configurar SSH para aceptar autenticación por clave pública
 RUN echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
+
+# Configurar SSH para X11 forwarding
+RUN echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
  
 # Expose SSH port for X11 forwarding
 ENV DISPLAY :0
